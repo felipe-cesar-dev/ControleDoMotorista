@@ -2,41 +2,48 @@ import { View, Text, TextInput, Button} from 'react-native';
 import React, { useState } from 'react';
 import {ImageBackground } from 'react-native';
 import { styles } from '../styles/style';
+import { guardarManutencao } from '../data/guardarManutencao';
 
 const TelaInicial = () => {
-  const [nome, setNome] = useState('');
-  const [valor, setValor] = useState('');
-  const [dataPagamento, setDataPagamento] = useState('');
-  const [manutencao, setManutencao] = useState({});
+  const nome = useState('');
+  const nomeGuardado= useState('');
+  const valor = useState('');
+  const valorGuardado= useState('');
+  const dataPagamento = useState('');
 
-  const guardarManutencao = () => {
-    const dados = {
-      nome: nome,
-      valor: valor,
-      dataPagamento: dataPagamento,
-    };
-    setManutencao(dados);
-  };
-
-  return (
-    <ImageBackground source={require('../assets/cifroes.jpeg')} style={{ width: '100%', height: '100%' }} >
-      <View style = {styles.inicio}>
-        <Text style = {styles.textoInicio}>Digite o nome da manutenção:</Text>
-        <TextInput value={nome} onChangeText={(text) => setNome(text)} placeholder="Ex: Troca de óleo" style = {styles.inputInicio} />
-        <Text style = {styles.textoInicio}>Digite o valor:</Text>
-        <TextInput style = {styles.inputInicio} value={valor} onChangeText={(text) => setValor(text)} placeholder="R$ 20,00" keyboardType="numeric" />
-        <Text style = {styles.textoInicio}>Digite a data do pagamento:</Text>
-        <TextInput style = {styles.inputInicio} value={dataPagamento} onChangeText={(text) => setDataPagamento(text)} placeholder="(dd/mm/aaaa)" keyboardType="numeric" />
-        <Button color= 'green' title="Guardar Manutenção" onPress={guardarManutencao} />
-        <View>
-          <Text>Manutenção:</Text>
-          <Text>Nome: {manutencao.nome}</Text>
-          <Text>Valor: {manutencao.valor}</Text>
-          <Text>Data do pagamento: {manutencao.dataPagamento}</Text>
+    return(
+    <ImageBackground
+    source={require('../assets/cifroes.jpeg')}
+    style={{ width: '100%', height: '100%' }} 
+    >
+        <View style = {styles.inicio}>
+            <Text style = {styles.textoInicio}>Digite o nome da manutenção:</Text>
+            <TextInput
+            value={nome}
+            placeholder="Ex: Troca de óleo"
+            style = {styles.inputInicio}
+            />
+            <Text style = {styles.textoInicio}>Digite o valor:</Text>
+            <TextInput
+            style = {styles.inputInicio}
+            value={valor}
+            placeholder="R$ 20,00"
+            keyboardType="numeric"
+            />
+            <Text style = {styles.textoInicio}>Digite a data do pagamento:</Text>
+            <TextInput
+            style = {styles.inputInicio}
+            value={dataPagamento}
+            placeholder="(dd/mm/aaaa)"
+            keyboardType="numeric"
+            />
+            <Button color= 'green' title="Guardar Manutenção" onPress={guardarManutencao} />
+            <Text>Manutenção: {nomeGuardado}</Text>
+            <Text>Valor: {valorGuardado}</Text>
+            <Text>Data do pagamento: {dataPagamento}</Text>
         </View>
-      </View>
-    </ImageBackground>
-  );
-};
+      </ImageBackground>
+    )
+}
 
-export default TelaInicial;
+export default TelaInicial
