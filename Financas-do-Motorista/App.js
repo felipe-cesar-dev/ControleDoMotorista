@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, ImageBackground, SafeAreaView } from 'react-native';
 
@@ -23,7 +22,7 @@ const App = () => {
       source={require('./assets/cifroes.jpeg')}
       style={{ width: '100%', height: '100%' }}
     > 
-      <SafeAreaView>
+      <SafeAreaView style={{padding: 30}}>
         <View>
           <Text>Digite seu nome:</Text>
           <TextInput
@@ -58,5 +57,6 @@ const App = () => {
     </ImageBackground>
   );
 };
+
 
 export default App;
