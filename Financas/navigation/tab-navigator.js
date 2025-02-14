@@ -7,9 +7,15 @@ const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{tabBarLabelStyle: {
+      fontSize: 13,
+      color: 'green'
+    },
+    tabBarActiveTintColor: 'green',
+    tabBarActiveBackgroundColor: 'rgba(134, 255, 134, 0.24)'
+    }}>
       <Tab.Screen
-        name="Início"
+        name="Inicio"
         component={TelaInicial}
         options={{
           tabBarIcon: ({ color, size }) => (

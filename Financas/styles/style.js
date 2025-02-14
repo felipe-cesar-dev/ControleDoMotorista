@@ -1,6 +1,6 @@
 export const styles = {
     inicio : {
-        backgroundColor: 'white',
+        backgroundColor: 'rgb(221, 255, 221)',
         padding: 20,
         paddingTop: 40,
         paddingBottom: 40,
