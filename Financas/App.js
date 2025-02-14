@@ -1,5 +1,6 @@
 import {ImageBackground } from 'react-native';
-import TelaInicial from './pages/Inicio';
+import MyTabs from './navigation/tab-navigator';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
@@ -7,8 +8,11 @@ const App = () => {
     source={require('./assets/cifroes.jpeg')}
     style={{ width: '100%', height: '100%' }} 
     >
-      <TelaInicial/>
+      <NavigationContainer>
+        <MyTabs/>
+      </NavigationContainer>
     </ImageBackground>
+    
   );
 };
 
