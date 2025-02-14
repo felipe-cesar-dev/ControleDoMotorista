@@ -1,8 +1,7 @@
-import { View, Text, TextInput, Button} from 'react-native';
-import React, { useState } from 'react';
+import { View, Text} from 'react-native';
+
 
 const Lista = () => {
-
     return(
         <View>
         <Text>Digite o nome da manutenção:</Text>

@@ -1,5 +1,6 @@
 import { View, Text, TextInput, Button} from 'react-native';
 import React, { useState } from 'react';
+import {ImageBackground } from 'react-native';
 
 const TelaInicial = () => {
   const [nome, setNome] = useState('');
@@ -15,6 +16,10 @@ const TelaInicial = () => {
   };
 
     return(
+    <ImageBackground
+    source={require('../assets/cifroes.jpeg')}
+    style={{ width: '100%', height: '100%' }} 
+    >
         <View>
         <Text>Digite o nome da manutenção:</Text>
         <TextInput
@@ -41,6 +46,7 @@ const TelaInicial = () => {
         <Text>Valor: {valorGuardado}</Text>
         <Text>Data do pagamento: {dataPagamento}</Text>
       </View>
+      </ImageBackground>
     )
 }
 
