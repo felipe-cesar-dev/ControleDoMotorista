@@ -8,7 +8,7 @@ const App = () => {
   const [valorGuardado, setValorGuardado] = useState('');
   const [dataPagamento, setDataPagamento] = useState('');
 
-  const handleGuardarNome = () => {
+  const RecolheDados = () => {
     setNomeGuardado(nome);
     setValorGuardado(valor);
     setDataPagamento(dataPagamento);
@@ -16,30 +16,30 @@ const App = () => {
 
   return (
     <View>
-      <Text>Qual é a manutenção?</Text>
+      <Text>Digite seu nome:</Text>
       <TextInput
         value={nome}
         onChangeText={(text) => setNome(text)}
-        placeholder="Digite aqui a manutenção"
+        placeholder="Nome"
       />
       <Text>Digite o valor:</Text>
       <TextInput
         value={valor}
         onChangeText={(text) => setValor(text)}
-        placeholder="R$"
+        placeholder="Valor"
         keyboardType="numeric"
       />
       <Text>Digite a data do pagamento:</Text>
       <TextInput
         value={dataPagamento}
         onChangeText={(text) => setDataPagamento(text)}
-        placeholder="(dd/mm/aaaa)"
+        placeholder="Data do pagamento (dd/mm/aaaa)"
         keyboardType="numeric"
       />
-      <Button title="Guardar" onPress={handleGuardarNome} />
-      <Text>Peça em manutenção: {nomeGuardado}</Text>
-      <Text>Valor guardado:  R${valorGuardado}</Text>
-      <Text>Data do pagamento: {dataPagamento}</Text>
+      <Button title="Guardar" onPress={RecolheDados} />
+      <Text>Nome guardado: {nomeGuardado}</Text>
+      <Text>Valor guardado: {valorGuardado}</Text>
+      <Text>Data do pagamento guardada: {dataPagamento}</Text>
     </View>
   );
 };
