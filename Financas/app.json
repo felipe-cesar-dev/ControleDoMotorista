@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Financas-do-Motorista",
-    "slug": "Financas-do-Motorista",
+    "name": "Financas",
+    "slug": "Financas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
